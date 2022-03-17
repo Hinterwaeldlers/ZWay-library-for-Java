@@ -76,7 +76,7 @@ public class DeviceList {
 
         for (Device device : mDevices) {
             Integer nodeId = device.getNodeId();
-            if (nodeId != -1) {
+            if (nodeId.intValue() != -1) {
                 if (physicalDevices.containsKey(nodeId)) {
                     physicalDevices.get(nodeId).add(device);
                 } else {
@@ -99,7 +99,7 @@ public class DeviceList {
         Map<Integer, List<Device>> physicalDevice = new HashMap<Integer, List<Device>>();
 
         for (Device device : mDevices) {
-            if (nodeId == device.getNodeId()) {
+            if (nodeId.intValue() == device.getNodeId().intValue()) {
                 if (physicalDevice.containsKey(nodeId)) {
                     physicalDevice.get(nodeId).add(device);
                 } else {
